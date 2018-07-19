@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="/kite-admin/Plugins/Bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/layui/css/layui.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Admin/layuipack.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Admin/kite.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Animate/animate.min.css" rel="stylesheet">
+
+    <style>
+        .layui-timeline-title {
+            display: flex;
+        }
+
+        .layui-timeline-title .layui-badge-rim {
+            position: relative;
+            left: 10px;
+            top: 4px;
+        }
+
+        h1 {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            font-size: 20px;
+            font-weight: 300 !important;
+        }
+
+        h3 {
+            font-size: 22px !important;
+        }
+
+        hr {
+            margin-bottom: 30px
+        }
+        
+        .sts-cls {
+            background-color: #eee;
+            border-radius: 50%;
+            color: #ee8d25;
+            padding: 0 3px;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+
+<body class="animated fadeInRight">
+
+<div class="kite-content">
+
+    <h1>更新日志</h1>
+
+    <hr>
+
+    <ul class="layui-timeline">
+    
+		<li class="layui-timeline-item">
+            <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+            <div class="layui-timeline-content layui-text">
+                <h3 class="layui-timeline-title">
+                    1.0.6
+                    <span class="layui-badge-rim">2018-06-21</span>
+                </h3>
+
+                <ul>
+                    <li><span class="sts-cls">U</span>测试</li>
+                </ul>
+            </div>
+        </li>
+		
+        <li class="layui-timeline-item">
+            <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+            <div class="layui-timeline-content layui-text">
+                <h3 class="layui-timeline-title">
+                    1.0.5
+                    <span class="layui-badge-rim">2018-04-03</span>
+                </h3>
+
+                <ul>
+                    <li><span class="sts-cls">U</span>统一各组件细节颜色为蓝色</li>
+                    <li><span class="sts-cls">U</span>修改顶部Tab标签样式</li>
+                    <li><a class="text-decoration: underline !important;"
+                           href="/kite-admin/download?fileName=v1.0.5.zip">下载文件：v1.0.5.zip</a></li>
+                </ul>
+            </div>
+        </li>
+
+        <li class="layui-timeline-item">
+            <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+            <div class="layui-timeline-content layui-text">
+                <h3 class="layui-timeline-title">
+                    1.0.4
+                    <span class="layui-badge-rim">2018-03-15</span>
+                </h3>
+
+                <ul>
+                    <li style="color: red"><span class="sts-cls">U</span>修改上传下载文件规则，支持更多情况。废弃Download、Upload目录，新增File（归档）、Temp（临时）目录</li>
+                    <li style="color: red"><span class="sts-cls">U</span>升级kite-all.1.0.0.jar到版本1.0.1，主要修改文件服务器功能，如未使用可直接升级。以后一直维护1.0.1版（升级方法：修改build.gradle的配置即可）</li>
+                    <li><span class="sts-cls">U</span>修改代码生成器模板，删除几行冗余代码</li>
+                    <li><span class="sts-cls">A</span>新增新版法人管理页面</li>
+                    <li><span class="sts-cls">A</span>新增新版用户管理页面</li>
+                    <li><span class="sts-cls">A</span>新增新版角色管理页面</li>
+                    <li><span class="sts-cls">A</span>新增新版菜单管理页面</li>
+                    <li style="color: red"><span class="sts-cls">U</span>更新新版维护页面方法如下：</li>
+                    <li>1. 更新vom-kite工程</li>
+                    <li>2. 手动改表KITE_PAGEDEF中对应的配置页面路径，如下图：</li>
+                    <li><img src="./build_server/pagedef.png"></li>
+                    <li>可以赋值下面代码到MENU_HREF字段，然后改系统ID即可：</li>
+                    <li>/vom-kite/Views/kite_bankinfo/kitebankinfo.html?sysId=0600</li>
+                    <li>/vom-kite/Views/kite_pagedef/kitepagedef.html?sysId=0600</li>
+                    <li>/vom-kite/Views/kite_role/kiterole.html?sysId=0600</li>
+                    <li>/vom-kite/Views/kite_user/kiteuser.html?sysId=0600</li>
+                    <li>注意：MENU_HREF字段中页面参数sysId要改成对应系统的ID，MENU_PARAMES字段留空</li>
+                </ul>
+            </div>
+        </li>
+
+        <li class="layui-timeline-item">
+            <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+            <div class="layui-timeline-content layui-text">
+                <h3 class="layui-timeline-title">
+                    1.0.3
+                    <span class="layui-badge-rim">2018-03-10</span>
+                </h3>
+
+                <ul>
+                    <li><span class="sts-cls">U</span>修改上传文件规则，现在按时间戳命名上传文件了（更新kite-all-1.0.0.jar即可）</li>
+                    <li><span class="sts-cls">U</span>优化代码查看功能</li>
+                    <li><span class="sts-cls">U</span>首页脚注现在可以删除了</li>
+                    <li><span class="sts-cls">A</span>新增TreeGrid组件</li>
+                    <li><span class="sts-cls">A</span>新增组件全局搜索功能</li>
+                    <li><span class="sts-cls">A</span>新增基础组件链接</li>
+                    <li><span class="sts-cls">A</span>新增d3图表及相关插件链接</li>
+                    <li><span class="sts-cls">A</span>新增项目构建功能，可直接下载新项目工程，并提供导入eclipse的步骤说明</li>
+                    <li><span class="sts-cls">A</span>新增环境搭建步骤说明，并提供标准版Tomcat容器下载</li>
+                    <li><span class="sts-cls">A</span>新增环境更新步骤说明</li>
+                    <li><span class="sts-cls">A</span>新增表达式组件</li>
+                    <li><a class="text-decoration: underline !important;"
+                           href="/kite-admin/download?fileName=v1.0.3.zip">下载文件：v1.0.3.zip</a></li>
+                </ul>
+            </div>
+        </li>
+
+        <li class="layui-timeline-item">
+            <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+            <div class="layui-timeline-content layui-text">
+                <h3 class="layui-timeline-title">
+                    1.0.2
+                    <span class="layui-badge-rim">2018-03-05</span>
+                </h3>
+
+                <ul>
+                    <li><span class="sts-cls">U</span>修改顶部一级菜单样式，由左侧小图标改为居中大图标</li>
+
+                    <li><span class="sts-cls">A</span>新增树列表示例，依赖ztree</li>
+                    <li><span class="sts-cls">A</span>新增左右布局示例</li>
+                    <li><span class="sts-cls">A</span>新增上传下载示例</li>
+                    <li><span class="sts-cls">A</span>新增导航标签示例</li>
+                    <li>注意：</li>
+                    <li>/Plugins/Admin下的kite.css不要改动，以便可以覆盖更新。各个应用如需要配置全局css，统一加到layuipack.css中</li>
+                    <li style="color: red;">现在可以点击右下角 “查看代码” 来查看对应页面的代码了</li>
+                    <li>如需要升级到此版本，请下载更新包，按照说明替换文件即可</li>
+                    <li><a class="text-decoration: underline !important;"
+                           href="/kite-admin/download?fileName=v1.0.2.zip">下载文件：v1.0.2.zip</a></li>
+                </ul>
+            </div>
+        </li>
+
+        <li class="layui-timeline-item">
+            <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+            <div class="layui-timeline-content layui-text">
+                <h3 class="layui-timeline-title">
+                    1.0.1
+                    <span class="layui-badge-rim">2018-01-01</span>
+                </h3>
+
+                <blockquote class="layui-elem-quote">
+                    升级ui主框架到最新版本，统一使用layui布局，统一使用gradle管理项目依赖
+                </blockquote>
+
+                <ul>
+                    <li>新版本初始化</li>
+                </ul>
+            </div>
+        </li>
+
+        <li class="layui-timeline-item">
+            <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+            <div class="layui-timeline-content layui-text">
+                <div class="layui-timeline-title">KAM</div>
+            </div>
+        </li>
+    </ul>
+
+</div>
+
+<script src="/kite-admin/Plugins/Jquery/jquery-2.1.4.min.js"></script>
+<script src="/kite-admin/Plugins/layui/layui.all.js"></script>
+<script src="/kite-admin/JsLib/JsHelper.js"></script>
+<script src="welcome.js"></script>
+</body>
+
+</html>

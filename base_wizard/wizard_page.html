@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="/kite-admin/Plugins/Bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/layui/css/layui.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Admin/layuipack.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Admin/kite.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Admin/imagebtn.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Animate/animate.min.css" rel="stylesheet">
+
+    <!-- 向导页插件 -->
+    <link href="/kite-admin/Plugins/Step/bs-is-fun.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Step/tf-wizard.css" rel="stylesheet">
+</head>
+
+<body class="animated fadeInRight">
+
+<div class="kite-content">
+
+    <blockquote class="layui-elem-quote">
+        添加产品
+    </blockquote>
+
+    <!-- 向导页开始 -->
+    <div class="tfmodel">
+        <div class="model-title">
+            <ul class="nav nav-pills nav-justified step step-arrow">
+                <li class="active"><a>产品基本信息</a></li>
+                <li><a>产品组件</a></li>
+                <li><a>产品关联</a></li>
+            </ul>
+        </div>
+        <div class="carousel slide" data-ride="carousel" data-interval="false" data-wrap="false">
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <%
+                    include("_table.html"){}
+                    %>
+                </div>
+                <div class="item" style="padding-top: 10px">
+                    <%
+                    include("_form.html"){}
+                    include("_form.html"){}
+                    %>
+                </div>
+                <div class="item">
+                    第三页
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <button class="layui-btn layui-btn-primary layui-btn-pack NN-back">返回</button>
+            <button class="layui-btn layui-btn-normal layui-btn-pack MN-pre btcontral" disabled>上一步</button>
+            <button class="layui-btn layui-btn-normal layui-btn-pack MN-next btcontral">下一步</button>
+            <button class="layui-btn layui-btn-normal layui-btn-pack MN-submit btcontral">提交</button>
+        </div>
+    </div>
+
+</div>
+
+<script src="/kite-admin/Plugins/Jquery/jquery-2.1.4.min.js"></script>
+<script src="/kite-admin/Plugins/layui/layui.all.js"></script>
+<script src="/kite-admin/JsLib/Url.js"></script>
+<script src="/kite-admin/JsLib/JsHelper.js"></script>
+<script src="/kite-admin/JsLib/JsAuth.js"></script>
+
+<!-- 向导页插件 -->
+<script src="/kite-admin/Plugins/Bootstrap/bootstrap.min.js"></script>
+<script src="/kite-admin/Plugins/Step/brush.js"></script>
+<script src="/kite-admin/Plugins/Step/tf-wizard.js"></script>
+
+<script src="wizard_page.js"></script>
+</body>
+
+</html>

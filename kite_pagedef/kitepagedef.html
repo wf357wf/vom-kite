@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="/kite-admin/Plugins/Bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/layui/css/layui.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Ztree/css/metroStyle/metroStyle.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Admin/layuipack.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Admin/kite.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Admin/imagebtn.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Animate/animate.min.css" rel="stylesheet">
+</head>
+
+<body class="animated fadeInRight">
+
+<div class="kite-content-row">
+
+    <div class="layui-row">
+        <div class="layui-col-xs3 position-right">
+
+            <blockquote class="layui-elem-quote">
+                菜单列表
+            </blockquote>
+
+            <div class="kite-content-xs">
+                <div class="kite-tree-searchbar">
+                    <form class="layui-form" action="">
+                        <div class="layui-form-item">
+                            <div class="layui-inline">
+                                <div class="layui-input-inline">
+                                    <input type="text" name="searchText" autocomplete="off" class="layui-input" placeholder="全局搜索">
+                                </div>
+                                <button class="layui-btn-pack layui-btn layui-btn-normal" lay-submit=""
+                                        lay-filter="ztree-search">
+                                    查询
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- 树结构 -->
+                <ul id="zTreeId" class="ztree"></ul>
+            </div>
+
+        </div>
+        <div class="layui-col-xs9">
+
+            <blockquote class="layui-elem-quote">
+                菜单信息
+            </blockquote>
+
+            <div class="kite-content-xs">
+                <form class="layui-form layui-formpad" id="treeForm" action="">
+
+                    <fieldset class="layui-elem-field">
+                        <legend id="label-title">新增菜单</legend>
+
+                        <div class="layui-form-item">
+                            <div class="layui-inline">
+                                <label class="layui-form-label label-width"><em>*</em>菜单类型</label>
+                                <div class="layui-input-inline input-width">
+                                    <select name="menuType" id="menuType" lay-filter="menuType">
+                                        <option value="M" id="sel-menu">菜单</option>
+                                        <option value="D" id="sel-dir">目录</option>
+                                        <option value="L" id="sel-label">标签</option>
+                                        <option value="R" id="sel-root">根目录</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="layui-form-item">
+
+                            <div class="layui-inline">
+                                <label class="layui-form-label label-width"><em>*</em>菜单标识</label>
+                                <div class="layui-input-inline input-width">
+                                    <input type="text" id="menuId" name="menuId" lay-verify="required" autocomplete="off" maxlength="50" class="layui-input">
+                                </div>
+                            </div>
+
+                            <div class="layui-inline">
+                                <label class="layui-form-label label-width">上级标识</label>
+                                <div class="layui-input-inline input-width">
+                                    <input type="text" id="menuParentid" name="menuParentid" value="root" autocomplete="off" maxlength="50" class="layui-input" disabled>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="layui-form-item">
+
+                            <div class="layui-inline">
+                                <label class="layui-form-label label-width"><em>*</em>菜单排序</label>
+                                <div class="layui-input-inline input-width">
+                                    <input type="number" id="menuSortnum" name="menuSortnum" lay-verify="required" autocomplete="off" maxlength="10" class="layui-input">
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="layui-form-item">
+
+                            <div class="layui-inline">
+                                <label class="layui-form-label label-width"><em>*</em>菜单名称</label>
+                                <div class="layui-input-inline input-width">
+                                    <input type="text" id="menuName" name="menuName" lay-verify="required" autocomplete="off" maxlength="100" class="layui-input">
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="layui-form-item">
+
+                            <div class="layui-inline">
+                                <label class="layui-form-label label-width">菜单地址</label>
+                                <div class="layui-input-inline" style="width: 483px">
+                                    <input type="text" id="menuHref" name="menuHref" lay-verify="required" autocomplete="off" maxlength="100" class="layui-input">
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="layui-form-item">
+
+                            <div class="layui-inline">
+                                <label class="layui-form-label label-width">菜单图标</label>
+                                <div class="layui-input-inline input-width">
+                                    <input type="text" id="menuImage" name="menuImage" autocomplete="off" maxlength="100" class="layui-input">
+                                </div>
+                            </div>
+
+                            <div class="layui-inline">
+                                <label class="layui-form-label label-width">菜单描述</label>
+                                <div class="layui-input-inline input-width">
+                                    <input type="text" id="menuDesc" name="menuDesc" autocomplete="off" maxlength="200" class="layui-input">
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </fieldset>
+
+                    <div class="layui-form-item">
+                        <div class="btn-left">
+                            <button class="layui-btn layui-btn-pack layui-btn-normal" lay-submit="" lay-filter="kitepagedef_btn">确定</button>
+                            <!--<a href="kitepagedef.html" class="layui-btn layui-btn-pack layui-btn-primary">返回</a>-->
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/kite-admin/Plugins/Jquery/jquery-2.1.4.min.js"></script>
+<script src="/kite-admin/Plugins/layui/layui.all.js"></script>
+<script src="/kite-admin/Plugins/Ztree/js/jquery.ztree.all.js"></script>
+<script src="/kite-admin/Plugins/Ztree/js/tf-ztree.js"></script>
+<script src="/kite-admin/JsLib/Url.js"></script>
+<script src="/kite-admin/JsLib/JsHelper.js"></script>
+<script src="/kite-admin/JsLib/JsAuth.js"></script>
+<script src="kitepagedef.js"></script>
+</body>
+
+</html>

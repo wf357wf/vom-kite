@@ -1,0 +1,100 @@
+<form class="layui-form" id="form_edit" action="">
+
+    <fieldset class="layui-elem-field">
+        <legend>基本信息</legend>
+
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label label-width">
+                    <em>*</em>产品编号</label>
+                <div class="layui-input-inline input-width">
+                    <input type="text" id="prdtNo" name="prdtNo" lay-verify="notChinese" autocomplete="off"
+                           class="layui-input" maxlength="10">
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label label-width">
+                    <em>*</em>产品名称</label>
+                <div class="layui-input-inline input-width">
+                    <input type="text" id="prdtName" name="prdtName" lay-verify="required" autocomplete="off"
+                           class="layui-input" maxlength="150">
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label label-width">
+                    <em>*</em>产品简称</label>
+                <div class="layui-input-inline input-width">
+                    <input type="text" id="shortName" name="shortName" lay-verify="required" autocomplete="off"
+                           class="layui-input" maxlength="90">
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label label-width">
+                    <em>*</em>开始日期</label>
+                <div class="layui-input-inline input-width">
+                    <input type="text" name="startDate" id="startDate" lay-verify="required" autocomplete="off"
+                           class="layui-input">
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label label-width">
+                    <em>*</em>结束日期</label>
+                <div class="layui-input-inline input-width">
+                    <input type="text" name="endDate" id="endDate" lay-verify="endDate" autocomplete="off"
+                           class="layui-input">
+                </div>
+            </div>
+        </div>
+
+    </fieldset>
+
+    <fieldset class="layui-elem-field">
+        <legend>其他信息</legend>
+
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label label-width">内部产品</label>
+                <div class="layui-input-inline input-width">
+                    <select name="internalFlag" lay-filter="select-inter">
+                        <%
+                        include("/Templates/_dict.html",
+                        {dictId:"0004", showBlank:true, showKey:false, choose:''}){}
+                        %>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label label-width">资产类型</label>
+                <div class="layui-input-inline input-width">
+                    <select id="select-assetType" name="assetType">
+                        <%
+                        include("/Templates/_dict.html",
+                            {dictId:"0004", showBlank:true, showKey:false, choose:''}){}
+                        %>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item" style="margin-bottom: 10px">
+            <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label label-width">详细描述</label>
+                <div class="layui-input-inline" style="width: 484px">
+                    <textarea placeholder="样式比较特殊，需要根据页面自行调整" class="layui-textarea"></textarea>
+                </div>
+            </div>
+        </div>
+
+    </fieldset>
+
+    <div class="layui-form-item">
+        <div class="btn-left">
+            <button class="layui-btn layui-btn-pack layui-btn-normal" lay-submit="" lay-filter="table_submit">提交</button>
+            <a href="table_list.html" class="layui-btn layui-btn-pack layui-btn-primary">返回</a>
+        </div>
+    </div>
+
+</form>

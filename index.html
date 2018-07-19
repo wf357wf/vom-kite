@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Kite Admin</title>
+
+    <link rel="icon" href="../Images/logo.png" type="image/x-icon"/>
+
+    <link rel="stylesheet" href="../Plugins/layui/css/layui.css">
+    <link rel="stylesheet" href="../Plugins/Admin/indexpack.css">
+    <link rel="stylesheet" href="../Plugins/Indexui/bootstrap.css">
+    <link rel="stylesheet" href="../Plugins/Indexui/index.css" id="kite-style">
+    <link rel="stylesheet" href="../Plugins/Font/font-awesome/font-awesome.css">
+    <link rel="stylesheet" href="../Plugins/Font/admin-icon/web-icons.css">
+	<style>
+	div::-webkit-scrollbar{width:10px;height:10px;}
+	div::-webkit-scrollbar-button:vertical{display:none;}
+	div::-webkit-scrollbar-track:vertical{background-color:black;}
+	div::-webkit-scrollbar-track-piece{background-color:#F5F5F5;}
+	div::-webkit-scrollbar-thumb:vertical{margin-right:10px; background-color:#A6A6A6;}
+	div::-webkit-scrollbar-thumb:vertical:hover{background-color:#aaa;}
+	div::-webkit-scrollbar-corner:vertical{background-color:#535353;}
+	div::-webkit-scrollbar-resizer:vertical{background-color:#FF6E00;}
+	</style>
+</head>
+
+<body class="site-contabs-open site-menubar-unfold">
+
+    <!--主导航栏-->
+    <nav class="site-navbar navbar navbar-default navbar-fixed-top navbar-inverse " role="navigation">
+        <div class="navbar-header">
+            <div class="navbar-brand navbar-brand-center site-gridmenu-toggle" data-toggle="gridmenu">
+                <span class="navbar-brand-logo visible-lg visible-xs navbar-logo" style="margin-left: 15px">KiteAdmin 标准版</span>
+                <span class="navbar-brand-logo hidden-xs hidden-lg navbar-logo-mini">KAM</span>
+            </div>
+        </div>
+        <div class="navbar-container container-fluid">
+            <div class="collapse navbar-collapse navbar-collapse-toolbar" id="kite-navbarCollapse">
+                <ul class="nav navbar-toolbar navbar-left">
+
+                    <li class="hidden-float">
+                        <a data-toggle="menubar" class="hidden-float hided unfolded" href="javascript:;" role="button">
+                            <i class="icon hamburger hamburger-arrow-left">
+                                <span class="sr-only">切换目录</span>
+                                <span class="hamburger-bar"></span>
+                            </i>
+                        </a>
+                    </li>
+
+                    <li class="navbar-menu nav-tabs-horizontal nav-tabs-animate" id="kite-navbar">
+                        <ul class="nav navbar-toolbar nav-tabs" role="tablist" id="top1">
+
+                            <!-- 顶部菜单 -->
+
+                        </ul>
+                    </li>
+                </ul>
+
+                <ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">
+
+                    <!--消息-->
+                    <!--
+                    <li class="hidden-xs" data-toggle="tooltip" data-placement="bottom" title=""
+                        data-original-title="消息">
+                        <a class="icon wb-bell" href="javascript:;" data-iframe="" target="_blank">
+                            <span class="sr-only">消息</span>
+                        </a>
+                    </li>
+                    -->
+
+                    <!--搜索-->
+                    <li class="lay-pack">
+                        <%
+                        include("/Templates/_index_search.html"){}
+                        %>
+                    </li>
+
+                    <!--主题设置-->
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" href="javascript:;" class="msg-btn" aria-expanded="true"
+                           data-animation="scale-up" role="button">
+                            <i class="icon wb-layout" aria-hidden="true"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-right dropdown-menu-media" id="settingMenu" role="menu">
+                            <li class="dropdown-menu-header" role="presentation">
+                                <h4>个性化主题设置（只保存在本地）</h4>
+                            </li>
+                            <li class="list-group" role="presentation">
+                                <div style="position: relative; height: 360px; width: 600px; overflow-y: auto; overflow-x: hidden">
+                                    <form id="settingForm" class="layui-form layui-formpad form-base-info">
+                                        <div class="layui-form-item" style="margin-top: 20px">
+                                            <label class="layui-form-label" style="margin-top: 5px; font-size: 13px; width: 110px">导航条颜色：</label>
+                                            <div class="layui-input-block">
+                                                <input type="radio" lay-filter="nav_color" name="nav_color" value="bg-primary-600" title="默认">
+                                                <input type="radio" lay-filter="nav_color" name="nav_color" value="bg-brown-600" title="棕色">
+                                                <input type="radio" lay-filter="nav_color" name="nav_color" value="bg-cyan-600" title="蓝绿">
+                                                <input type="radio" lay-filter="nav_color" name="nav_color" value="bg-green-600" title="绿色">
+                                                <input type="radio" lay-filter="nav_color" name="nav_color" value="bg-grey-600" title="灰色">
+                                                <input type="radio" lay-filter="nav_color" name="nav_color" value="bg-indigo-600" title="靛蓝">
+                                                <input type="radio" lay-filter="nav_color" name="nav_color" value="bg-purple-600" title="紫色">
+                                                <input type="radio" lay-filter="nav_color" name="nav_color" value="bg-red-600" title="红色">
+                                                <input type="radio" lay-filter="nav_color" name="nav_color" value="bg-teal-600" title="青色">
+                                                <input type="radio" lay-filter="nav_color" name="nav_color" value="bg-yellow-700" title="黄色">
+                                                <input type="radio" lay-filter="nav_color" name="nav_color" value="bg-pink-600" title="粉色">
+                                                <input type="radio" lay-filter="nav_color" name="nav_color" value="bg-orange-600" title="橙色">
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label" style="margin-top: 5px; font-size: 13px; width: 110px">白色导航栏：</label>
+                                            <div class="layui-input-block">
+                                                <input type="radio" lay-filter="nav_inverse" name="nav_inverse" value='1' title="是">
+                                                <input type="radio" lay-filter="nav_inverse" name="nav_inverse" value='0' title="否">
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="layui-form-item">
+                                            <div class="layui-inline">
+                                                <label class="layui-form-label" style="font-size: 13px; width: 110px">菜单主题色：</label>
+                                                <div class="layui-input-inline input-width">
+                                                    <select lay-filter="theme_style" id="theme_style">
+                                                        <option value="1">深色主题</option>
+                                                        <option value="0">浅色主题</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label" style="margin-top: 5px; font-size: 13px; width: 110px">菜单显示：</label>
+                                            <div class="layui-input-block">
+                                                <input type="radio" lay-filter="menu_status" name="menu_status" value="1" title="默认展开">
+                                                <input type="radio" lay-filter="menu_status" name="menu_status" value="0" title="默认收起">
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label" style="margin-top: 5px; font-size: 13px; width: 110px">标签导航：</label>
+                                            <div class="layui-input-block">
+                                                <input type="radio" lay-filter="nav_tab" name="nav_tab" value="1" title="开启">
+                                                <input type="radio" lay-filter="nav_tab" name="nav_tab" value="0" title="关闭">
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!--全屏-->
+                    <li class="hidden-xs" id="kite-fullscreen" data-toggle="tooltip" data-placement="bottom" title="全屏">
+                        <a class="icon icon-fullscreen" data-toggle="fullscreen" href="./#" role="button">
+                            <span class="sr-only">全屏</span>
+                        </a>
+                    </li>
+
+                    <!--退出-->
+                    <li class="hidden-xs" data-toggle="tooltip" data-placement="bottom" title="退出">
+                        <a class="icon fa-sign-out" href="../Logout.html" role="button">
+                            <span class="sr-only">退出</span>
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <!--左侧菜单-->
+    <nav class="site-menubar site-menubar-dark" id="kite-siteMenubar">
+        <div class="site-menubar-body">
+            <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 100%;">
+                <div class="tab-content height-full" id="kite-navTabs" style="overflow: auto; width: auto; height: 100%;">
+
+                    <!-- 一级菜单 -->
+
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!--导航标签-->
+    <nav class="site-contabs" id="kite-siteConTabs">
+
+        <button type="button" class="btn btn-icon btn-default pull-left hide">
+            <i class="icon fa-angle-double-left"></i>
+        </button>
+
+        <div class="contabs-scroll pull-left">
+            <ul class="nav con-tabs">
+                <li class="active">
+                    <a href="./welcome.html" target="iframe-0" title="首页">
+                        <span>首页</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="btn-group pull-right">
+            <button type="button" class="btn btn-icon btn-default hide">
+                <i class="icon fa-angle-double-right"></i>
+            </button>
+            <button type="button" class="btn btn-default dropdown-toggle btn-outline" data-toggle="dropdown" aria-expanded="false">
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="conTabsDropdown" role="menu">
+                <li class="reload-page" role="presentation">
+                    <a href="javascript:;" role="menuitem">
+                        <i class="icon wb-reload"></i> 刷新当前</a>
+                </li>
+                <li class="close-other" role="presentation">
+                    <a href="javascript:;" role="menuitem">
+                        <i class="icon wb-close"></i> 关闭其他</a>
+                </li>
+                <li class="close-all" role="presentation">
+                    <a href="javascript:;" role="menuitem">
+                        <i class="icon wb-power"></i> 关闭所有</a>
+                </li>
+            </ul>
+        </div>
+
+    </nav>
+
+    <!--主页面-->
+    <main class="site-page">
+        <div class="page-container" id="kite-pageContent">
+            <iframe src="./welcome.html" frameborder="0" name="iframe-0" class="page-frame animation-fade active"></iframe>
+        </div>
+    </main>
+
+    <!--脚注-->
+    <footer class="site-footer">
+        <b>KAM</b> 管理端框架标准模板
+        <span class="pull-right">v 1.0.5</span>
+        <button id="viewSource" onclick="openSourceCode()" class="pull-right layui-btn layui-btn-normal layui-btn-xs" style="margin-right: 20px;">查看代码</button>
+    </footer>
+
+    <script src="../Plugins/Jquery/jquery-2.1.4.min.js"></script>
+    <script src="../Plugins/Indexui/bootstrap.min.js"></script>
+    <script src="../Plugins/Indexui/breakpoints.min.js"></script>
+    <script src="../Plugins/Jquery/jquery-asHoverScroll.min.js"></script>
+    <script src="../Plugins/Jquery/jquery.slimscroll.min.js"></script>
+    <script src="../Plugins/Indexui/screenfull.min.js"></script>
+    <script src="../Plugins/layui/layui.js"></script>
+    <script src="../JsLib/Url.js"></script>
+    <script src="../JsLib/JsHelper.js"></script>
+    <script src="../JsLib/JsAuth.js"></script>
+    <script src="index.js"></script>
+    <script src="../Plugins/Indexui/jscore.min.js"></script>
+
+</body>
+
+</html>

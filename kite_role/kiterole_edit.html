@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="/kite-admin/Plugins/Bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/layui/css/layui.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Admin/layuipack.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Admin/kite.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Animate/animate.min.css" rel="stylesheet">
+</head>
+
+<body class="animated fadeInRight">
+
+<div class="kite-content">
+
+    <form class="layui-form layui-formpad" action="" id="form_edit">
+
+        <div class="layui-form-item" style="margin-top: 15px;">
+
+            <div class="layui-inline">
+                <label class="layui-form-label label-width">角色标识</label>
+                <div class="layui-input-inline input-width">
+                    <input type="text" id="roleId" name="roleId" lay-verify="required" autocomplete="off"
+                           maxlength="50" class="layui-input" disabled>
+                </div>
+            </div>
+
+            <div class="layui-inline">
+                <label class="layui-form-label label-width"><em>*</em>角色名称</label>
+                <div class="layui-input-inline input-width">
+                    <input type="text" id="roleName" name="roleName" lay-verify="required" autocomplete="off"
+                           maxlength="50" class="layui-input">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="layui-form-item">
+
+            <div class="layui-inline">
+                <label class="layui-form-label label-width">角色描述</label>
+                <div class="layui-input-inline" style="width: 484px">
+                    <input type="text" id="roleDesc" name="roleDesc" autocomplete="off"
+                           maxlength="256" class="layui-input">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="layui-form-item">
+            <div class="btn-left">
+                <button class="layui-btn layui-btn-pack layui-btn-normal" lay-submit="" lay-filter="kiterole_edit">提交
+                </button>
+            </div>
+        </div>
+
+    </form>
+
+</div>
+
+<script src="/kite-admin/Plugins/Jquery/jquery-2.1.4.min.js"></script>
+<script src="/kite-admin/Plugins/layui/layui.all.js"></script>
+<script src="/kite-admin/JsLib/Url.js"></script>
+<script src="/kite-admin/JsLib/JsHelper.js"></script>
+<script src="/kite-admin/JsLib/JsAuth.js"></script>
+<script src="kiterole_edit.js"></script>
+</body>
+
+</html>

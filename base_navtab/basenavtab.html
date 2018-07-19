@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="/kite-admin/Plugins/Bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/layui/css/layui.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Admin/layuipack.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Admin/kite.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Animate/animate.min.css" rel="stylesheet">
+    <style>
+        .layui-btn {
+            width: 160px;
+        }
+
+        p {
+            margin-bottom: 10px;
+            color: #737383;
+        }
+    </style>
+</head>
+
+<body class="animated fadeInRight">
+
+<div class="kite-content">
+
+    <blockquote class="layui-elem-quote">
+        操作导航标签
+    </blockquote>
+
+    <div>
+        <p>在标签栏上打开一个新的标签页，标题和连接自定义，如果需要传参直接拼url后即可</p>
+        <p>注意：如果已经打开过连接，则直接切换到已经打开的标签，并且标题不回改变</p>
+        <button id="openNewTab" class="layui-btn layui-btn-pack layui-btn-primary">打开新标签</button>
+    </div>
+    <div style="margin-top: 30px">
+        <p>关闭当前激活的标签，目前不能关闭指定标签</p>
+        <button id="closeActiveTab" class="layui-btn layui-btn-pack layui-btn-danger">关闭激活标签</button>
+    </div>
+
+</div>
+
+<script src="/kite-admin/Plugins/Jquery/jquery-2.1.4.min.js"></script>
+<script src="/kite-admin/Plugins/layui/layui.all.js"></script>
+<script src="/kite-admin/JsLib/Url.js"></script>
+<script src="/kite-admin/JsLib/JsHelper.js"></script>
+<script src="/kite-admin/JsLib/JsAuth.js"></script>
+<script src="basenavtab.js"></script>
+</body>
+
+</html>

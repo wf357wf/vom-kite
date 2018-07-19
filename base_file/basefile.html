@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="/kite-admin/Plugins/Bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/layui/css/layui.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Admin/layuipack.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Admin/kite.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Admin/imagebtn.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Animate/animate.min.css" rel="stylesheet">
+
+    <style>
+        p {
+            margin-bottom: 10px;
+            color: #737383;
+        }
+    </style>
+</head>
+
+<body class="animated fadeInRight">
+
+<div class="kite-content">
+
+    <blockquote class="layui-elem-quote">
+        上传下载示例（依赖：kite-all-1.0.1.jar）
+        <a href="http://www.layui.com/demo/upload.html" class="pull-right" target="_blank">访问官网</a>
+    </blockquote>
+
+    <div>
+        <p>上传需要在web.xml配置servlet，class指定为com.tfrunning.core.fileserv.FileUploadServlet，详情参考web.xml</p>
+        <p>上传成功会返回文件名及其所在的绝对路径，可以按F12上传一个文件查看</p>
+        <p>目前只支持单个文件上传，如需上传多个文件，可以重写FileUploadServlet，然后将web.xml的servlet指向新写的class即可</p>
+        <p>上传成功后的文件保存在服务器的Temp目录，点击下方按钮查看：</p>
+        <button type="button" class="layui-btn layui-btn-normal" id="uploadFile">
+            <i class="layui-icon">&#xe67c;</i>
+            上传文件
+        </button>
+    </div>
+
+    <div style="margin-top: 40px">
+        <p>下载需要在web.xml配置servlet，class指定为com.tfrunning.core.fileserv.FileDownloadServlet，详情参考web.xml</p>
+        <p>下载文件的保存路径是File，下载的文件要是先保存在这里或者归档这个文件夹</p>
+        <p>归档方法：</p>
+        <p>FileServ fileServ = new FileServ(fileId);</p>
+        <p>boolean success = fileServ.moveFile();</p>
+        <p>下载的连接类似：/kite-admin/download?fileName=README.md，意思是需要下载README.md文件</p>
+        <p>文件归档后也可以利用文件id下载，如：/kite-admin/download?fileName=fileId</p>
+        <p>如果不需要下载而是用浏览器直接打开，这需要加一个参数fileMode=open，如：/kite-admin/download?fileName=fileId&fileMode=open</p>
+        <p>点击下方连接查看：</p>
+        <a class="text-decoration: underline !important;"
+           href="/kite-admin/download?fileName=README.md">下载文件：README.md</a>
+    </div>
+
+</div>
+
+<script src="/kite-admin/Plugins/Jquery/jquery-2.1.4.min.js"></script>
+<script src="/kite-admin/Plugins/layui/layui.all.js"></script>
+<script src="/kite-admin/JsLib/Url.js"></script>
+<script src="/kite-admin/JsLib/JsHelper.js"></script>
+<script src="/kite-admin/JsLib/JsAuth.js"></script>
+<script src="basefile.js"></script>
+</body>
+
+</html>

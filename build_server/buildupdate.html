@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="/kite-admin/Plugins/Bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/layui/css/layui.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Admin/layuipack.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Admin/kite.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Animate/animate.min.css" rel="stylesheet">
+
+    <style>
+        li {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        span {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .kite-content a {
+            color: blue;
+            font-size: 16px;
+        }
+
+        .kite-content a:hover {
+            text-decoration: underline !important;
+        }
+    </style>
+</head>
+
+<body class="animated fadeInRight">
+
+<div class="kite-content">
+
+    <blockquote class="layui-elem-quote">
+        服务器环境更新步骤
+    </blockquote>
+
+    <ul>
+        <li>一. 全量更新：</li>
+        <li>(1) 通过gradle war命令打包，将生成的war包中的配置文件改成服务器对应的配置（可直接对war包进行操作）</li>
+        <li>(2) 停服务，删除服务器webapps目录下的同名目录及war包文件（如：demo-admin目录，demo-admin.war文件）然后将新打的war包上传，启动服务即可</li>
+        <li>二. 增量更新：</li>
+        <li>(1) 通过gradle war命令打包，然后解压，找出要更新的文件，替换到webapps下对应的应用中的文件</li>
+        <li>(2) tomcat支持热部署，但为保险起见，更新class文件时建议重启下服务</li>
+        <hr>
+        <li style="color: red">更新前要注意备份</li>
+    </ul>
+
+</div>
+
+<script src="/kite-admin/Plugins/Jquery/jquery-2.1.4.min.js"></script>
+<script src="/kite-admin/Plugins/layui/layui.all.js"></script>
+<script src="/kite-admin/JsLib/Url.js"></script>
+<script src="/kite-admin/JsLib/JsHelper.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="/kite-admin/Plugins/Bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/layui/css/layui.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Admin/layuipack.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Admin/kite.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Animate/animate.min.css" rel="stylesheet">
+
+    <style>
+        li {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        span {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .kite-content a {
+            color: blue;
+            font-size: 16px;
+        }
+
+        .kite-content a:hover {
+            text-decoration: underline !important;
+        }
+    </style>
+</head>
+
+<body class="animated fadeInRight">
+
+<div class="kite-content">
+
+    <blockquote class="layui-elem-quote">
+        服务器环境搭建步骤
+    </blockquote>
+    <div style="margin-top: 20px">
+        <span>Tomcat容器下载：</span>
+        <a class="text-decoration: underline !important;"
+           href="/kite-admin/download?fileName=Tomcat-9.0.1.zip">Tomcat-9.0.1.zip</a>
+    </div>
+    <hr style="margin: 20px 0">
+
+    <ul>
+        <li>1. 新建服务器用户，配置JDK，需要JDK版本1.8+</li>
+        <li>2. 下载Tomcat-9.0.1.zip，上传到服务器，使用【unzip Tomcat-9.0.1.zip】命令解压文件</li>
+        <li>3. 【cd】进入Tomcat-9.0.1目录执行【mv * ../】将所有文件移动到根目录，然后【rmdir】删除空目录Tomcat-9.0.1</li>
+        <li>4. 目录说明如下：</li>
+        <div style="padding: 10px 50px; background-color: #eee">
+            <ul>
+                <li><span style="color: #0B61A4">backup</span> --备份目录</li>
+                <li><span style="color: #0B61A4">bin</span> --脚本存放目录，常用脚本：startup.sh-启动服务、stop.sh-停止服务、tl.sh-查看日志</li>
+                <li><span style="color: #0B61A4">conf</span> --Tomcat配置目录，只有server.xml需要配置，主要是配置浏览器访问端口和ip过滤</li>
+                <li><span style="color: #0B61A4">h2db</span> --vom-kite工程数据库存放目录</li>
+                <li><span style="color: #0B61A4">lib</span> --Tomcat依赖jar，也可以把所有应用都依赖的公共jar放到这个目录下，对所有应用都生效</li>
+                <li><span style="color: #0B61A4">logs</span> --日志目录</li>
+                <li><span style="color: #0B61A4">temp、work</span> --Tomcat依赖目录，不需要任何改动，不要删除</li>
+                <li><span style="color: #0B61A4">webapps</span> --应用部署目录，把war包放到这里即可部署</li>
+                <li><span style="color: #0B61A4">webapps/ROOT</span> --配置直接输入ip和端口就可以访问应用</li>
+            </ul>
+        </div>
+        <li>5. 将vom-kite.war和应用的war上传到/webapps目录下</li>
+        <li>6. 执行startup.sh启动服务，然后执行tl.sh查看日志，如果出现配置错误，先执行stop.sh停止服务，然后去改配置，再起服务</li>
+        <li>7. 成功启动这服务部署完毕</li>
+    </ul>
+
+    <hr style="margin: 20px 0">
+    <div style="margin: 20px 0">
+        <span>server.xml配置：</span>
+    </div>
+    <ul>
+        <li>1. 浏览器访问端口配置</li>
+        <li><img src="port.png"></li>
+        <li>2. 过滤ip配置</li>
+        <li><img src="ip.png"></li>
+        <li>allow="" 为允许ip，配置多个需要用正则表达式，可参考如下配置。deny="" 为禁止ip</li>
+        <li>&lt;Valve className=&quot;org.apache.catalina.valves.RemoteAddrValve&quot; allow=&quot;200\.3\.200\.42|127\.0\.0\.1|192\.168\.31\.224&quot; deny=&quot;&quot;/&gt;</li>
+    </ul>
+
+</div>
+
+<script src="/kite-admin/Plugins/Jquery/jquery-2.1.4.min.js"></script>
+<script src="/kite-admin/Plugins/layui/layui.all.js"></script>
+<script src="/kite-admin/JsLib/Url.js"></script>
+<script src="/kite-admin/JsLib/JsHelper.js"></script>
+
+</body>
+
+</html>

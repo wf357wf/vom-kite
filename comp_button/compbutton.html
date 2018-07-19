@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="/kite-admin/Plugins/Bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/layui/css/layui.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Admin/layuipack.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Admin/kite.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Admin/imagebtn.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Animate/animate.min.css" rel="stylesheet">
+
+    <style>
+        p {
+            margin-bottom: 15px;
+            color: #737383;
+        }
+
+        .d-content {
+            padding: 10px 40px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body class="animated fadeInRight">
+
+<div class="kite-content">
+
+    <blockquote class="layui-elem-quote">
+        按钮
+    </blockquote>
+
+    <div class="d-content">
+        <p>默认按钮样式</p>
+        <button class="layui-btn-pack layui-btn layui-btn-normal">查询</button>
+        <button class="layui-btn-pack layui-btn layui-btn-normal">新增</button>
+        <button class="layui-btn-pack layui-btn layui-btn-primary">重置</button>
+        <button class="layui-btn-pack layui-btn layui-btn-danger">删除</button>
+        <button class="layui-btn-pack layui-btn layui-btn-danger layui-btn-disabled">禁用</button>
+    </div>
+    <div class="d-content">
+        <p>圆角按钮样式</p>
+        <button class="layui-btn-pack layui-btn layui-btn-normal layui-btn-radius">查询</button>
+        <button class="layui-btn-pack layui-btn layui-btn-normal layui-btn-radius">新增</button>
+        <button class="layui-btn-pack layui-btn layui-btn-primary layui-btn-radius">重置</button>
+        <button class="layui-btn-pack layui-btn layui-btn-danger layui-btn-radius">删除</button>
+        <button class="layui-btn-pack layui-btn layui-btn-danger layui-btn-disabled layui-btn-radius">禁用</button>
+    </div>
+    <div class="d-content">
+        <p>注：如果要根据系统定制按钮色系，可以layuipack.css中覆盖layui-btn-normal、layui-btn-primary、layui-btn-danger的默认样式</p>
+        <p>这样改动全局试用</p>
+    </div>
+
+</div>
+
+<script src="/kite-admin/Plugins/Jquery/jquery-2.1.4.min.js"></script>
+<script src="/kite-admin/Plugins/layui/layui.all.js"></script>
+<script src="/kite-admin/JsLib/Url.js"></script>
+<script src="/kite-admin/JsLib/JsHelper.js"></script>
+<script src="/kite-admin/JsLib/JsAuth.js"></script>
+</body>
+
+</html>

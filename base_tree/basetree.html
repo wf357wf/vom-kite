@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="/kite-admin/Plugins/Bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/layui/css/layui.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Ztree/css/metroStyle/metroStyle.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Admin/layuipack.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Admin/kite.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Admin/imagebtn.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Animate/animate.min.css" rel="stylesheet">
+
+    <style>
+        p {
+            margin-bottom: 10px;
+            color: #737383;
+        }
+    </style>
+</head>
+
+<body class="animated fadeInRight">
+
+<div class="kite-content-row">
+
+    <div class="layui-row">
+        <div class="layui-col-xs3 position-right">
+
+            <blockquote class="layui-elem-quote">
+                树型菜单
+            </blockquote>
+
+            <div class="kite-content-xs">
+                <div class="kite-tree-searchbar">
+                    <form class="layui-form" action="">
+                        <div class="layui-form-item">
+                            <div class="layui-inline">
+                                <div class="layui-input-inline">
+                                    <input type="text" name="searchText" autocomplete="off" class="layui-input" placeholder="全局搜索">
+                                </div>
+                                <button class="layui-btn-pack layui-btn layui-btn-normal" lay-submit=""
+                                        lay-filter="ztree-search">
+                                    查询
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- 树结构 -->
+                <ul id="zTreeId" class="ztree"></ul>
+            </div>
+
+        </div>
+        <div class="layui-col-xs9">
+
+            <blockquote class="layui-elem-quote">
+                右侧信息
+                <a href="http://www.treejs.cn/v3/main.php#_zTreeInfo" class="pull-right" target="_blank">访问官网</a>
+            </blockquote>
+
+            <div class="kite-content-xs">
+                <p>可以根据左侧树事件来控制右侧面板动作</p>
+                <p>依赖：</p>
+                <p>/Plugins/Ztree/css/metroStyle/metroStyle.css</p>
+                <p>/Plugins/Ztree/js/jquery.ztree.all.js</p>
+                <p>/Plugins/Ztree/js/tf-ztree.js</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/kite-admin/Plugins/Jquery/jquery-2.1.4.min.js"></script>
+<script src="/kite-admin/Plugins/layui/layui.all.js"></script>
+<script src="/kite-admin/Plugins/Ztree/js/jquery.ztree.all.js"></script>
+<script src="/kite-admin/Plugins/Ztree/js/tf-ztree.js"></script>
+<script src="/kite-admin/JsLib/Url.js"></script>
+<script src="/kite-admin/JsLib/JsHelper.js"></script>
+<script src="/kite-admin/JsLib/JsAuth.js"></script>
+<script src="basetree.js"></script>
+</body>
+
+</html>

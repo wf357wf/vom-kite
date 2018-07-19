@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="/kite-admin/Plugins/Bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/layui/css/layui.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Admin/layuipack.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Admin/kite.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Admin/imagebtn.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Animate/animate.min.css" rel="stylesheet">
+</head>
+
+<body class="animated fadeInRight">
+
+<div class="kite-content">
+
+    <div class="kite-toolbar">
+        <form class="layui-form" action="">
+            <div class="layui-form-item">
+
+                <div class="layui-inline">
+                    <label class="layui-form-label layui-form-label-search">法人编号</label>
+                    <div class="layui-input-inline">
+                        <input type="text" id="bankId" name="bankId" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+
+                <div class="layui-inline kite-searchbtn">
+                    <button class="layui-btn-pack layui-btn layui-btn-normal" lay-submit=""
+                        lay-filter="kitebankinfo-search">查询
+                    </button>
+                    <button type="reset" class="layui-btn-pack layui-btn layui-btn-primary">重置</button>
+                </div>
+
+                <div class="layui-inline pull-right">
+                    <a href="kitebankinfo_add.html"
+                        class="layui-btn-pack layui-btn layui-btn-normal">新增法人</a>
+                </div>
+
+            </div>
+        </form>
+    </div>
+
+    <table id="kitebankinfo_table" lay-filter="kitebankinfo_table"></table>
+
+    <script type="text/html" id="toolBar">
+        <button class="btn_edit"   title="编辑" lay-event="edit"></button>
+        <button class="btn_delete" title="删除" lay-event="del"></button>
+        <button class="btn_detail" title="详情" lay-event="detail"></button>
+    </script>
+
+</div>
+
+<script src="/kite-admin/Plugins/Jquery/jquery-2.1.4.min.js"></script>
+<script src="/kite-admin/Plugins/layui/layui.all.js"></script>
+<script src="/kite-admin/JsLib/Url.js"></script>
+<script src="/kite-admin/JsLib/JsHelper.js"></script>
+<script src="/kite-admin/JsLib/JsAuth.js"></script>
+<script src="kitebankinfo.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>统一登录平台</title>
+    <link rel="icon" href="../Images/logo-login-title.png"
+          type="image/x-icon"/>
+    <link href="../Plugins/Bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../Plugins/Font/font-awesome/font-awesome.css"
+          rel="stylesheet">
+    <link href="../Plugins/Animate/animate.min.css" rel="stylesheet">
+    <link href="../Plugins/Admin/login.css" rel="stylesheet">
+    <style>
+        .center-vertical {
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    </style>
+</head>
+
+<body style="background-image: url('../Images/index/bg1280_1024.png')">
+
+<img src="../Images/index/bg_login.png" class="center-vertical"
+     style="position: fixed; left: 50%; top: 50%; margin-left: -253px;"/>
+
+<form role="form"
+      style="position: fixed; left: 50%; top: 50%; margin-left: -235px;">
+    <div style="padding-top: 10px; height: 62px">
+        <input type="text" class="input-control_ margin_" id="username"
+               style="text-indent: 32px;" placeholder="用户名" autocomplete="off"
+               onfocus="this.placeholder=''" onblur="this.placeholder='用户名'"
+               maxlength="32">
+    </div>
+    <div style="padding-top: 10px; height: 62px">
+        <input type="password" id="password" class="input-control_"
+               placeholder="密    码" onfocus="this.placeholder=''"
+               style="text-indent: 32px;" onblur="this.placeholder='密    码'"
+               maxlength="32">
+    </div>
+</form>
+<img src="../Images/index/ic_user.png" class="center-vertical"
+     style="position: fixed; left: 50%; top: 50%; margin-top: 33px; margin-left: -155px"/>
+<img src="../Images/index/ic_password.png"
+     class="center-vertical"
+     style="position: fixed; left: 50%; top: 50%; margin-top: 95px; margin-left: -155px"/>
+<img src="../Images/index/btn_enter1.png" id="login_btn"
+     class="center-vertical"
+     style="position: fixed; left: 50%; top: 50%; margin-top: 95px; margin-left: 120px; cursor: pointer"/>
+<button id="login-btn">登录</button>
+<div id="error_label"></div>
+<div class="footer_"
+     style="position: fixed; left: 50%; top: 50%; margin-left: -190px; margin-top: 140px">
+    <div id="login-footer">大连同方软银科技股份有限公司 © 版权所有</div>
+</div>
+<script src="../Plugins/Jquery/jquery-2.1.4.min.js"></script>
+<script src="../Plugins/Bootstrap/bootstrap.min.js"></script>
+<script src="../Plugins/layer/layer.js"></script>
+<script src="../JsLib/Url.js"></script>
+<script src="../JsLib/JsHelper.js"></script>
+<script src="../JsLib/Encrypt.js"></script>
+<script src="login.js"></script>
+</body>
+</html>

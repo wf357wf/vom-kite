@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="/kite-admin/Plugins/Bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/layui/css/layui.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Admin/layuipack.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Admin/kite.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Animate/animate.min.css" rel="stylesheet">
+</head>
+
+<body class="animated fadeInRight">
+
+<div class="kite-content">
+
+    <form class="layui-form layui-formpad" action="" id="form_edit">
+
+        <div class="layui-form-item" style="margin-top: 15px;">
+
+            <div class="layui-inline">
+                <label class="layui-form-label label-width">用户编号</label>
+                <div class="layui-input-inline input-width">
+                    <input type="text" id="userId" name="userId" autocomplete="off" maxlength="20"
+                           class="layui-input" disabled>
+                </div>
+            </div>
+
+            <div class="layui-inline">
+                <label class="layui-form-label label-width"><em>*</em>用户名称</label>
+                <div class="layui-input-inline input-width">
+                    <input type="text" id="userName" name="userName" lay-verify="required" autocomplete="off"
+                           maxlength="64" class="layui-input">
+                </div>
+            </div>
+
+            <div class="layui-inline">
+                <label class="layui-form-label label-width"><em>*</em>用户状态</label>
+                <div class="layui-input-inline input-width">
+                    <select name="userStatus" id="userStatus" lay-verify="required" lay-filter="menuType">
+                        <option value="Y">启用</option>
+                        <option value="N">停用</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="layui-inline">
+                <label class="layui-form-label label-width"><em>*</em>法人</label>
+                <div class="layui-input-inline input-width">
+                    <select name="bankId" id="bankId" lay-verify="required" lay-filter="menuType">
+                        <option value=""></option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="layui-inline">
+                <label class="layui-form-label label-width">登录密码</label>
+                <div class="layui-input-inline input-width">
+                    <input type="text" id="userPass" name="userPass" placeholder="不改密码留空" autocomplete="off"
+                           maxlength="64" class="layui-input">
+                </div>
+            </div>
+
+            <div class="layui-inline">
+                <label class="layui-form-label label-width"><em>*</em>手机</label>
+                <div class="layui-input-inline input-width">
+                    <input type="text" id="userPhone" name="userPhone" lay-verify="required" autocomplete="off"
+                           maxlength="64" class="layui-input">
+                </div>
+            </div>
+
+            <div class="layui-inline">
+                <label class="layui-form-label label-width"><em>*</em>邮箱</label>
+                <div class="layui-input-inline input-width">
+                    <input type="text" id="userEmail" name="userEmail" lay-verify="required" autocomplete="off"
+                           maxlength="64" class="layui-input">
+                </div>
+            </div>
+
+            <div class="layui-inline">
+                <label class="layui-form-label label-width">备注</label>
+                <div class="layui-input-inline input-width">
+                    <input type="text" id="userComment" name="userComment" autocomplete="off"
+                           maxlength="1024" class="layui-input">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="layui-form-item">
+            <div class="btn-left">
+                <button class="layui-btn layui-btn-pack layui-btn-normal" lay-submit="" lay-filter="kiteuser_edit">提交</button>
+            </div>
+        </div>
+
+    </form>
+
+</div>
+
+<script src="/kite-admin/Plugins/Jquery/jquery-2.1.4.min.js"></script>
+<script src="/kite-admin/Plugins/layui/layui.all.js"></script>
+<script src="/kite-admin/JsLib/Url.js"></script>
+<script src="/kite-admin/JsLib/JsHelper.js"></script>
+<script src="/kite-admin/JsLib/JsAuth.js"></script>
+<script src="/kite-admin/JsLib/Encrypt.js"></script>
+<script src="kiteuser_edit.js"></script>
+</body>
+
+</html>

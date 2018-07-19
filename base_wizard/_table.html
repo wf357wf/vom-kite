@@ -1,0 +1,52 @@
+<div class="kite-content">
+
+    <div class="kite-toolbar">
+        <form class="layui-form layui-formpad" action="">
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <label class="layui-form-label layui-form-label-search">产品名称</label>
+                    <div class="layui-input-inline">
+                        <input type="text" id="prdtName" name="prdtName" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label layui-form-label-search">内部产品</label>
+                    <div class="layui-input-inline">
+                        <select id="internalFlag" name="internalFlag">
+                            <%
+                            include("/Templates/_dict.html",
+                            {dictId:"0004", showBlank:true, showKey:false, choose:''}){}
+                            %>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-inline kite-searchbtn">
+                    <button class="layui-btn-pack layui-btn-normal layui-btn" lay-submit="" lay-filter="prdtddmast-search">查询</button>
+                    <button type="reset" class="layui-btn-pack layui-btn layui-btn-primary pull-right">重置</button>
+                </div>
+
+                <div class="layui-inline layui-formbtn pull-right">
+                    <a href="javascript:;" id="open" class="layui-btn-pack layui-btn-normal layui-btn">弹出查看</a>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="tfline"></div>
+
+    <table id="table_list" lay-filter="table_list"></table>
+
+    <script type="text/html" id="toolBar">
+        <button class="btn_edit" title="编辑" lay-event="edit"></button>
+        <button class="btn_delete" title="删除" lay-event="del"></button>
+        <button class="btn_detail" title="详情" lay-event="detail"></button>
+    </script>
+
+    <script type="text/html" id="stsTpl">
+        <%
+        include("/Templates/_dict_table.html",
+            {dictId:"0003", keyName:'capFlag', showKey:false}){}
+        %>
+    </script>
+
+</div>

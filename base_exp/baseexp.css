@@ -1,0 +1,77 @@
+.exp-badge,
+.exp-badge-rim {
+    position: relative;
+    display: inline-block;
+    padding: 0 6px;
+    font-size: 12px;
+    text-align: center;
+    background-color: #FF5722;
+    color: #fff;
+    border-radius: 2px;
+    border-color: #e6e6e6;
+}
+
+.exp-badge {
+    height: 18px;
+    line-height: 18px;
+}
+
+.exp-badge-rim {
+    height: 18px;
+    line-height: 18px;
+    border: 1px solid;
+    background-color: #fff;
+    color: #666;
+}
+
+.exp-badge {
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.ui-sortable-placeholder {
+    background-color: rgba(0, 0, 0, 0.2);
+    position: relative;
+    top: 4px;
+}
+
+.sortable-list {
+    padding: 0px;
+}
+
+.layui-btn {
+    min-width: 40px;
+}
+
+.layui-btn + .layui-btn {
+    margin-left: 3px !important;
+}
+
+.close {
+    z-index: 10000;
+    color: red !important;
+    display: none;
+    position: absolute;
+    top: -6px;
+    right: -7px;
+}
+
+.exp-bg-gray {
+    background-color: #eee !important;
+    color: #666 !important;
+}
+
+.exp-design {
+    overflow-y: auto;
+    margin-top: 5px;
+    height: 180px;
+}
+
+.exp-btn-big {
+    min-width: 70px;
+}
+
+.kite-content .layui-elem-quote {
+    margin: 5px 0 0 0;
+    background-color: #fff;
+}

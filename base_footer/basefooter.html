@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="/kite-admin/Plugins/Bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/layui/css/layui.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Admin/layuipack.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Admin/kite.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Animate/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/kite-admin/Plugins/highlight/styles/tomorrow.css">
+    <style>
+        .layui-btn {
+            width: 160px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            color: #737383;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body class="animated fadeInRight">
+
+<div class="kite-content">
+
+    <blockquote class="layui-elem-quote">
+        首页脚注删除步骤
+    </blockquote>
+
+    <div>
+
+        <ul>
+            <li>1. 首先，这个哥们叫脚注：</li>
+            <li><img style="width: 1000px" src="footer.jpg"></li>
+            <li>2. 这个脚注默认是显示的，如果不需要。可以删除或注释index.html页面对应的代码，代码如下图：</li>
+            <li><img src="code.png"></li>
+            <li>3. 在index.html里面添加如下代码（style标签要放到head标签内）</li>
+            <li><pre><code class="html">
+&lt;style&gt;
+	.site-contabs-open, .site-page, .page-frame {
+		height: -webkit-calc(100vh - 100px) !important;
+		height: calc(100vh - 100px) !important;
+	}
+&lt;/style&gt;
+
+</code></pre></li>
+            <li>4. F5刷新页面，这时候脚注就不见了，也不会留下原来占有的高度</li>
+        </ul>
+
+    </div>
+
+</div>
+
+<script src="/kite-admin/Plugins/Jquery/jquery-2.1.4.min.js"></script>
+<script src="/kite-admin/Plugins/layui/layui.all.js"></script>
+<script src="/kite-admin/JsLib/Url.js"></script>
+<script src="/kite-admin/JsLib/JsHelper.js"></script>
+<script src="/kite-admin/JsLib/JsAuth.js"></script>
+<script src="/kite-admin/Plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>

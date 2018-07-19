@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="/kite-admin/Plugins/Bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/layui/css/layui.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Admin/layuipack.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Admin/kite.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Animate/animate.min.css" rel="stylesheet">
+</head>
+
+<body class="animated fadeInRight">
+
+<div class="kite-content">
+
+    <blockquote class="layui-elem-quote">
+        <a href="buildtest.html">XX参数</a>
+        <span class="layui-box">&gt;</span>
+        添加参数
+    </blockquote>
+
+    <form class="layui-form layui-formpad" action="">
+
+        <fieldset class="layui-elem-field">
+            <legend>基本信息</legend>
+
+            <div class="layui-form-item">
+
+                <div class="layui-inline">
+					<label class="layui-form-label label-width"><em>*</em>用户标识</label>
+					<div class="layui-input-inline input-width">
+						<input type="text" id="userId" name="userId" lay-verify="required" autocomplete="off" maxlength="60" class="layui-input">
+					</div>
+				</div>
+
+                <div class="layui-inline">
+					<label class="layui-form-label label-width"><em>*</em>姓名</label>
+					<div class="layui-input-inline input-width">
+						<input type="text" id="userName" name="userName" lay-verify="required" autocomplete="off" maxlength="60" class="layui-input">
+					</div>
+				</div>
+
+                <div class="layui-inline">
+					<label class="layui-form-label label-width"><em>*</em>性别</label>
+					<div class="layui-input-inline input-width">
+						<input type="text" id="userSex" name="userSex" lay-verify="required" autocomplete="off" maxlength="60" class="layui-input">
+					</div>
+				</div>
+
+                <div class="layui-inline">
+					<label class="layui-form-label label-width"><em>*</em>电话</label>
+					<div class="layui-input-inline input-width">
+						<input type="text" id="userPhone" name="userPhone" lay-verify="required" autocomplete="off" maxlength="60" class="layui-input">
+					</div>
+				</div>
+
+                <div class="layui-inline">
+					<label class="layui-form-label label-width"><em>*</em>电子邮件</label>
+					<div class="layui-input-inline input-width">
+						<input type="text" id="userEmail" name="userEmail" lay-verify="required" autocomplete="off" maxlength="60" class="layui-input">
+					</div>
+				</div>
+
+                <div class="layui-inline">
+					<label class="layui-form-label label-width"><em>*</em>地址</label>
+					<div class="layui-input-inline input-width">
+						<input type="text" id="userAddress" name="userAddress" lay-verify="required" autocomplete="off" maxlength="256" class="layui-input">
+					</div>
+				</div>
+
+                <div class="layui-inline">
+					<label class="layui-form-label label-width"><em>*</em>备注</label>
+					<div class="layui-input-inline input-width">
+						<input type="text" id="userDesc" name="userDesc" lay-verify="required" autocomplete="off" maxlength="256" class="layui-input">
+					</div>
+				</div>
+
+            </div>
+
+        </fieldset>
+
+        <div class="layui-form-item">
+            <div class="btn-left">
+                <button class="layui-btn layui-btn-pack layui-btn-normal" lay-submit="" lay-filter="buildtest_add">提交</button>
+                <a href="buildtest.html" class="layui-btn layui-btn-pack layui-btn-primary">返回</a>
+            </div>
+        </div>
+
+    </form>
+
+</div>
+
+<script src="/kite-admin/Plugins/Jquery/jquery-2.1.4.min.js"></script>
+<script src="/kite-admin/Plugins/layui/layui.all.js"></script>
+<script src="/kite-admin/JsLib/Url.js"></script>
+<script src="/kite-admin/JsLib/JsHelper.js"></script>
+<script src="/kite-admin/JsLib/JsAuth.js"></script>
+<script src="buildtest_add.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="/kite-admin/Plugins/Bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/layui/css/layui.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Admin/layuipack.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Admin/kite.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Animate/animate.min.css" rel="stylesheet">
+</head>
+
+<body class="animated fadeInRight">
+
+<div class="kite-content">
+
+    <blockquote class="layui-elem-quote">
+        <a href="kitebankinfo.html">法人管理</a>
+        <span class="layui-box">&gt;</span>
+        修改法人
+    </blockquote>
+
+    <form class="layui-form layui-formpad" action="" id="form_edit">
+
+        <div class="layui-form-item">
+
+            <div class="layui-inline">
+                <label class="layui-form-label label-width"><em>*</em>法人编号</label>
+                <div class="layui-input-inline input-width">
+                    <input type="text" id="bankId" name="bankId" lay-verify="required" autocomplete="off" maxlength="50"
+                           class="layui-input" disabled>
+                </div>
+            </div>
+
+            <div class="layui-inline">
+                <label class="layui-form-label label-width"><em>*</em>法人名称</label>
+                <div class="layui-input-inline input-width">
+                    <input type="text" id="bankName" name="bankName" lay-verify="required" autocomplete="off"
+                           maxlength="50" class="layui-input">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="layui-form-item">
+
+            <div class="layui-inline">
+                <label class="layui-form-label label-width">法人描述</label>
+                <div class="layui-input-inline" style="width: 484px">
+                    <input type="text" id="bankDesc" name="bankDesc" autocomplete="off"
+                           maxlength="50" class="layui-input">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="layui-form-item">
+            <div class="btn-left">
+                <button class="layui-btn layui-btn-pack layui-btn-normal" lay-submit="" lay-filter="kitebankinfo_edit">
+                    提交
+                </button>
+                <a href="kitebankinfo.html" class="layui-btn layui-btn-pack layui-btn-primary">返回</a>
+            </div>
+        </div>
+
+    </form>
+
+</div>
+
+<script src="/kite-admin/Plugins/Jquery/jquery-2.1.4.min.js"></script>
+<script src="/kite-admin/Plugins/layui/layui.all.js"></script>
+<script src="/kite-admin/JsLib/Url.js"></script>
+<script src="/kite-admin/JsLib/JsHelper.js"></script>
+<script src="/kite-admin/JsLib/JsAuth.js"></script>
+<script src="kitebankinfo_edit.js"></script>
+</body>
+
+</html>

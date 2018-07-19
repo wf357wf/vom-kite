@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="/kite-admin/Plugins/Bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/layui/css/layui.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Admin/layuipack.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Admin/kite.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Animate/animate.min.css" rel="stylesheet">
+
+    <style>
+        .code a {
+            color: blue;
+        }
+
+        .code a:hover {
+            text-decoration: underline !important;
+        }
+    </style>
+</head>
+
+<body class="animated fadeInRight">
+
+<div class="kite-content">
+
+    <blockquote class="layui-elem-quote">
+        表达式配置
+    </blockquote>
+
+    <form class="layui-form" id="form_edit" action="">
+
+        <fieldset class="layui-elem-field">
+            <legend>新增</legend>
+
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <label class="layui-form-label label-width">
+                        表达式值</label>
+                    <div class="layui-input-inline input-width">
+                        <input type="text" id="expAdd" autocomplete="off" class="layui-input" readonly>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label label-width">
+                        回显用字符串</label>
+                    <div class="layui-input-inline" style="width: 500px">
+                        <input type="text" id="expAddHtml" autocomplete="off" class="layui-input readonly">
+                    </div>
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <div class="btn-left">
+                    <a href="javascript:;" id="add" class="layui-btn layui-btn-pack layui-btn-primary">新增表达式</a>
+                </div>
+            </div>
+
+        </fieldset>
+
+        <fieldset class="layui-elem-field">
+            <legend>编辑</legend>
+
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <label class="layui-form-label label-width">
+                        表达式信息</label>
+                    <div class="layui-input-inline input-width">
+                        <input type="text" id="expEdit" value="\${120026}<=\${130001}" autocomplete="off" class="layui-input" readonly>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label label-width">
+                        回显用字符串</label>
+                    <div class="layui-input-inline" style="width: 500px">
+                        <input type="text" id="expEditHtml" value="" autocomplete="off" class="layui-input" readonly>
+                    </div>
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <div class="btn-left">
+                    <a href="javascript:;" id="edit" class="layui-btn layui-btn-pack layui-btn-normal">编辑表达式</a>
+                </div>
+            </div>
+
+        </fieldset>
+
+    </form>
+
+    <div class="code" style="margin-bottom: 10px">
+        下载表达式组件代码：
+        <a href="/kite-admin/download?fileName=base_exp.zip">base_exp.zip</a>
+    </div>
+    <span>注：压缩包中baseexp.html、baseexp.js、baseexp.css应为全局调用页面，需要根据业务做相应的调整，然后通过iframe调用即可。</span>
+</div>
+
+<script src="/kite-admin/Plugins/Jquery/jquery-2.1.4.min.js"></script>
+<script src="/kite-admin/Plugins/layui/layui.all.js"></script>
+<script src="/kite-admin/JsLib/Url.js"></script>
+<script src="/kite-admin/JsLib/JsHelper.js"></script>
+<script src="/kite-admin/JsLib/JsAuth.js"></script>
+<script src="baseexp_select.js"></script>
+</body>
+
+</html>

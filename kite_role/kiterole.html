@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="/kite-admin/Plugins/Bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/layui/css/layui.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Admin/layuipack.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Ztree/css/metroStyle/metroStyle.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Admin/kite.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Admin/imagebtn.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Animate/animate.min.css" rel="stylesheet">
+
+    <style>
+        .kite-content-xs {
+            padding: 0 10px !important;
+        }
+
+        .layui-tab-content {
+            padding: 0 !important;
+        }
+
+        .ztree {
+            padding: 10px !important;
+        }
+
+        .save-btn {
+            position: absolute;
+            bottom: 22px;
+            right: 20px;
+        }
+    </style>
+
+</head>
+
+<body class="animated fadeInRight">
+
+<div class="kite-content-row">
+
+    <div class="layui-row">
+        <div class="layui-col-xs5 position-right">
+
+            <blockquote class="layui-elem-quote">
+                角色列表
+            </blockquote>
+
+            <div class="kite-content-xs">
+
+                <div class="kite-toolbar">
+                    <form class="layui-form" action="">
+                        <div class="layui-form-item">
+                            <div class="layui-inline">
+                                <div class="layui-input-inline" style="position: relative; bottom: 3px;">
+                                    <input type="text" id="roleId" autocomplete="off" placeholder="角色名称" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline kite-searchbtn">
+                                <button class="layui-btn-pack layui-btn layui-btn-normal" lay-submit=""
+                                        lay-filter="kiterole-search">查询
+                                </button>
+                            </div>
+                            <div class="layui-inline pull-right">
+                                <a id="role-add" href="javascript:;" class="layui-btn-pack layui-btn layui-btn-normal">新增角色</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <table id="kiterole_table" lay-filter="kiterole_table"></table>
+
+            </div>
+
+        </div>
+        <div class="layui-col-xs7">
+
+            <blockquote class="layui-elem-quote">
+                角色关联
+            </blockquote>
+
+            <div class="kite-content-xs">
+                <div class="layui-tab layui-tab-brief">
+                    <ul class="layui-tab-title">
+                        <li class="layui-this">关联用户</li>
+                        <li>关联菜单</li>
+                    </ul>
+                    <div class="layui-tab-content" style="height: 100px;">
+                        <i id="tip-label" style="position: relative; top: 20px; left: 10px; color: #666">请先在左侧角色列表中选择一条记录</i>
+                        <div class="layui-tab-item layui-show kite-user">
+                            <table id="kiteuser_table" lay-filter="kiteuser_table"></table>
+                            <button id="user-save" class="layui-btn layui-btn-pack layui-btn-normal save-btn">保存用户关联</button>
+                        </div>
+                        <div class="layui-tab-item">
+                            <ul id="zTreeId" class="ztree"></ul>
+                            <button id="menu-save" class="layui-btn layui-btn-pack layui-btn-normal save-btn">保存菜单关联</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/html" id="toolBar">
+        <button class="btn_edit"   title="编辑" lay-event="edit"></button>
+        <button class="btn_delete" title="删除" lay-event="del"></button>
+    </script>
+
+</div>
+
+<script src="/kite-admin/Plugins/Jquery/jquery-2.1.4.min.js"></script>
+<script src="/kite-admin/Plugins/layui/layui.all.js"></script>
+<script src="/kite-admin/Plugins/Ztree/js/jquery.ztree.all.js"></script>
+<script src="/kite-admin/Plugins/Ztree/js/tf-ztree.js"></script>
+<script src="/kite-admin/JsLib/Url.js"></script>
+<script src="/kite-admin/JsLib/JsHelper.js"></script>
+<script src="/kite-admin/JsLib/JsAuth.js"></script>
+<script src="kiterole.js"></script>
+</body>
+
+</html>

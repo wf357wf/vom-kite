@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="/kite-admin/Plugins/Bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/layui/css/layui.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Admin/layuipack.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Admin/kite.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Animate/animate.min.css" rel="stylesheet">
+
+    <style>
+        li {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        span {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .kite-content a {
+            color: blue;
+            font-size: 16px;
+        }
+
+        .kite-content a:hover {
+            text-decoration: underline !important;
+        }
+    </style>
+</head>
+
+<body class="animated fadeInRight">
+
+<div class="kite-content">
+
+    <blockquote class="layui-elem-quote">
+        构建项目步骤
+    </blockquote>
+    <div style="margin-top: 20px">
+        <span>工程初始文件（最新版）：</span>
+        <a class="text-decoration: underline !important;" id="newProject" href="javascript:;">点击生成</a>
+    </div>
+    <hr style="margin: 20px 0">
+
+    <ul>
+        <li>1. 将zip包解压（注意要保留根目录）然后将项目导入eclipse（请提前准备好gradle环境和eclipse gradle插件buildship）</li>
+        <li>2. 打开eclipse的Gradle Tasks窗口（Window -> Show View -> other...），如下图：</li>
+        <li><img src="step1.png"></li>
+        <li>3. 导入项目，如下图：</li>
+        <li><img src="step2.png"></li>
+        <li>4. 选择刚刚解压出的项目文件夹，如下图：</li>
+        <li><img src="step3.png"></li>
+        <li>5. 导入成功之后，这时候的项目还不是web项目，需要转换一下（先在项目上右键，选择Properties），如下图：</li>
+        <li><img src="step4.png"></li>
+        <li>6. 将web-admin同vom-kite一起加入eclipse tomcat服务环境即可启动，如下图：</li>
+        <li><img src="step5.png"></li>
+    </ul>
+
+</div>
+
+<script src="/kite-admin/Plugins/Jquery/jquery-2.1.4.min.js"></script>
+<script src="/kite-admin/Plugins/layui/layui.all.js"></script>
+<script src="/kite-admin/JsLib/Url.js"></script>
+<script src="/kite-admin/JsLib/JsHelper.js"></script>
+<script src="buildtutorial.js"></script>
+
+</body>
+
+</html>

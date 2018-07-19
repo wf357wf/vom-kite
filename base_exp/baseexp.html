@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="/kite-admin/Plugins/Bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Animate/animate.min.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/layui/css/layui.css" rel="stylesheet">
+    <link href="/kite-admin/Plugins/Admin/kite.css" rel="stylesheet">
+    <link href="baseexp.css" rel="stylesheet">
+</head>
+
+<body class="animated fadeInRight">
+
+<div class="kite-content">
+
+    <div style="margin-top: 5px">
+        <div class="layui-btn-group">
+            <button class="exp-btn layui-btn layui-btn-normal layui-btn-xs" exp="+">+</button>
+            <button class="exp-btn layui-btn layui-btn-normal layui-btn-xs" exp="-">-</button>
+            <button class="exp-btn layui-btn layui-btn-normal layui-btn-xs" exp="*">*</button>
+            <button class="exp-btn layui-btn layui-btn-normal layui-btn-xs" exp="/">/</button>
+            <button class="exp-btn layui-btn layui-btn-normal layui-btn-xs" exp="(">(</button>
+            <button class="exp-btn layui-btn layui-btn-normal layui-btn-xs" exp=")">)</button>
+            <button class="exp-btn layui-btn layui-btn-normal layui-btn-xs" exp="==">==</button>
+            <button class="exp-btn layui-btn layui-btn-normal layui-btn-xs" exp="!=">!=</button>
+            <button class="exp-btn layui-btn layui-btn-normal layui-btn-xs" exp=">">></button>
+            <button class="exp-btn layui-btn layui-btn-normal layui-btn-xs" exp=">=">>=</button>
+            <button class="exp-btn layui-btn layui-btn-normal layui-btn-xs" exp="<"><</button>
+            <button class="exp-btn layui-btn layui-btn-normal layui-btn-xs" exp="<="><=</button>
+            <button class="exp-btn layui-btn layui-btn-normal layui-btn-xs" exp="&&">&&</button>
+            <button class="exp-btn layui-btn layui-btn-normal layui-btn-xs" exp="||">||</button>
+            <button class="exp-btn layui-btn layui-btn-normal layui-btn-xs" exp="%">%</button>
+            <button class="exp-btn layui-btn layui-btn-xs" exp="normal">常量</button>
+        </div>
+    </div>
+
+    <blockquote id="exp_design" class="exp-design layui-elem-quote layui-quote-nm">
+        <div class="sortable-list connectList agile-list">
+        </div>
+    </blockquote>
+
+    <div class="layui-tab layui-tab-card" lay-filter="tab-card" style="height: calc(100% - 270px)">
+        <ul class="layui-tab-title">
+            <li class="layui-this" lay-id="id1">交易数据域</li>
+            <li lay-id="id2">数据总线</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <%
+                include("_table1.html"){}
+                %>
+            </div>
+            <div class="layui-tab-item">
+                <%
+                include("_table2.html"){}
+                %>
+            </div>
+        </div>
+    </div>
+
+    <div class="pull-right">
+        <button class="exp-btn-big layui-btn layui-btn-primary layui-btn-pack" id="exp-reset">重置</button>
+        <button class="exp-btn-big layui-btn layui-btn-normal layui-btn-pack" id="exp-submit">提交</button>
+    </div>
+</div>
+
+<script src="/kite-admin/Plugins/Jquery/jquery-2.1.4.min.js"></script>
+<script src="/kite-admin/Plugins/Jquery/jquery-ui.min.js"></script>
+<script src="/kite-admin/Plugins/layui/layui.all.js"></script>
+<script src="/kite-admin/JsLib/Url.js"></script>
+<script src="/kite-admin/JsLib/JsHelper.js"></script>
+<script src="baseexp.js"></script>
+</body>
+
+</html>
